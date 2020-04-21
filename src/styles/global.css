@@ -20,7 +20,7 @@ input {
   margin: 3px;
 }
 
-button {
+.btn-default {
   padding: 10px 30px;
   background-color: teal;
   border: none;
@@ -30,6 +30,9 @@ button {
   font-weight: bold;
   margin: 3px;
   cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family:  sans-serif;
 }
 
 h1, h2, h3 {
