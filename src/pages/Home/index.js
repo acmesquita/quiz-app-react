@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Card } from './styles';
+import GameContext from '../../context/GameContext';
 
 export default function Home() {
   const [userName, setUserName] = useState('')
+  const gameContext = useContext(GameContext)
+
+  function startGame() {
+    gameContext.gameDispatch({ type: 'add_user', user_name: userName })
+  }
 
   return (
     <Container>
@@ -14,7 +20,7 @@ export default function Home() {
           value={userName}
           onChange={e => setUserName(e.target.value)}
         />
-        {userName && <Link to='/questions' className='btn-default'>Start Quiz</Link>}
+        {userName && <Link to='/questions' onClick={startGame} className='btn-default'>Start Quiz</Link>}
       </Card>
     </Container>
   );
