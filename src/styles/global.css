@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  background-color: #434343;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  font-family: sans-serif;
+  color: #434343;
+  border: none;
+  border-radius: 3px;
+  margin: 3px;
+}
+
+button {
+  padding: 10px 30px;
+  background-color: teal;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
+  margin: 3px;
+  cursor: pointer;
+}
+
+h1, h2, h3 {
+  text-transform: uppercase;
+  color: teal;
+  margin-bottom: 20px;
+}
