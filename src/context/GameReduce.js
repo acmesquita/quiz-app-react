@@ -3,11 +3,12 @@ import Game from '../models/Game';
 const initialState = new Game();
 
 const reducer = (state, action) => {
-  switch (action.type) {
-    case 'add_user':
-      return { ...state, user_name: action.user_name }
-    default:
-      return state
+  return actions[action.type](state, action);
+}
+
+const actions = {
+  add_user: (state, action) => {
+    return { ...state, user_name: action.user_name }
   }
 }
 
