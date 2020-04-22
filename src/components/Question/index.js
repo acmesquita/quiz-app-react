@@ -19,7 +19,7 @@ export default function Question({ question, anwers, nextQuestion }) {
       let color = item === correct_answer ? 'teal' : 'lightcoral'
       if (item === answer) color = 'lightblue'
       return (
-        <Option key={item} onClick={() => validateAnwer(item)} color={color}>
+        <Option key={item} color={color} >
           <p>{item}</p>
         </Option>
       )
@@ -36,7 +36,7 @@ export default function Question({ question, anwers, nextQuestion }) {
       </Option>
     ))
     setNext(false)
-  }, [question])
+  }, [question, anwers])
 
   return (
     <Wrapper>
