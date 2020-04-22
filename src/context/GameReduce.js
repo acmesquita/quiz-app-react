@@ -36,6 +36,9 @@ const actions = {
         position_question: state.position_question + 1,
       }
     }
+  },
+  reset: (state, action) => {
+    return { ...state, initialState }
   }
 }
 
