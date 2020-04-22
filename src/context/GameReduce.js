@@ -7,7 +7,9 @@ const initialState = {
   finished: false,
   init_game: new Date(),
   finish_game: '',
-  started: false
+  started: false,
+  correct: 0,
+  errors: 0
 }
 
 const reducer = (state, action) => {
@@ -39,6 +41,12 @@ const actions = {
   },
   reset: (state, action) => {
     return { ...state, initialState }
+  },
+  correct: (state, action) => {
+    return { ...state, correct: state.correct + 1 }
+  },
+  error: (state, action) => {
+    return { ...state, errors: state.errors + 1 }
   }
 }
 

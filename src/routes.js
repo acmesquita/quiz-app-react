@@ -10,7 +10,7 @@ export default function Routes() {
     <BrowserRouter>
       <Switch>
         <Route path='/' exact component={Home} />
-        {gameState.started == true &&
+        {gameState.started === true &&
           <Route path='/questions' exact component={Questions} />}
         <Route path="*" component={Home} />
       </Switch>
