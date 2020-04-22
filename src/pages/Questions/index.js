@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import GameContext from '../../context/GameContext';
 import Question from '../../components/Question';
 import GameOver from '../../components/GameOver';
-// import { Container } from './styles';
+import { Container } from './styles';
 
 export default function Questions() {
   const { gameState, gameDispatch } = useContext(GameContext);
@@ -12,8 +12,7 @@ export default function Questions() {
   }
 
   return (
-    <>
-      <h1>Hello {gameState.user_name}</h1>
+    <Container>
       {gameState.finished && <GameOver />}
       {!gameState.finished &&
         <Question
@@ -22,6 +21,6 @@ export default function Questions() {
           nextQuestion={nextQuestion}
         />
       }
-    </>
+    </Container>
   );
 }
