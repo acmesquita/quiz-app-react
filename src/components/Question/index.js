@@ -15,10 +15,15 @@ export default function Question({ question, anwers, nextQuestion }) {
     } else {
       gameDispatch({ type: 'error' })
     }
-    setQuestions(anwers.map(item =>
-      <Option key={item} onClick={() => validateAnwer(item)} color={item === correct_answer ? 'teal' : 'lightcoral'}>
-        <p>{item}</p>
-      </Option>
+    setQuestions(anwers.map(item => {
+      let color = item === correct_answer ? 'teal' : 'lightcoral'
+      if (item === answer) color = 'lightblue'
+      return (
+        <Option key={item} onClick={() => validateAnwer(item)} color={color}>
+          <p>{item}</p>
+        </Option>
+      )
+    }
     ))
     setNext(true)
   }
