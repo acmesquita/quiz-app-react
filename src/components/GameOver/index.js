@@ -11,11 +11,11 @@ export default function GameOver() {
   }
 
   function duration() {
-    var timeDiff = Math.abs(gameState.finish_game.getTime() - gameState.init_game.getTime());
-    var diffMilissegundos = timeDiff
-    var diffSegundos = parseInt(`${diffMilissegundos / 1000}`);
-    var diffMinutos = parseInt(`${diffSegundos / 60}`);
-    var diffHoras = parseInt(`${diffMinutos / 60}`);
+    const timeDiff = Math.abs(gameState.finish_game.getTime() - gameState.init_game.getTime());
+    const diffMilissegundos = timeDiff
+    const diffSegundos = parseInt(`${diffMilissegundos / 1000}`);
+    const diffMinutos = parseInt(`${diffSegundos / 60}`);
+    const diffHoras = parseInt(`${diffMinutos / 60}`);
 
     return `${diffHoras}:${diffMinutos}:${diffSegundos}`;
   }
