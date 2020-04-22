@@ -20,11 +20,24 @@ export default function GameOver() {
     return `${diffHoras}:${diffMinutos}:${diffSegundos}`;
   }
 
+  function percentEvaluation(){
+    return (gameState.correct/gameState.questions.length)*100
+  }
+
+  function evaluation(){
+    if(percentEvaluation > 50){
+      return `Parabéns ${gameState.user_name} você foi aprovado!!!`;
+    }
+    return `Poxa ${gameState.user_name}, infelizmente não atingiu a pontuação mínima =/`;
+  }
+
   return (
     <Container>
-      <h1>Acabou {gameState.user_name}</h1>
+      <h1>{evaluation()}</h1>
+      <p>INFORMAÇÕES</p>
       <h3>Total de acertos: {gameState.correct}</h3>
       <h3>Total de erros: {gameState.errors}</h3>
+      <h3>Percentual: {percentEvaluation()}%</h3>
       <h3>Tempo total: {duration()}</h3>
       <Link to='/' className="btn-default" onClick={resetGame}>Restart</Link>
     </Container>
