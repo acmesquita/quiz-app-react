@@ -25,7 +25,7 @@ export default function GameOver() {
   }
 
   function evaluation(){
-    if(percentEvaluation > 50){
+    if(percentEvaluation > 50.0){
       return `Parabéns ${gameState.user_name} você foi aprovado!!!`;
     }
     return `Poxa ${gameState.user_name}, infelizmente não atingiu a pontuação mínima =/`;
