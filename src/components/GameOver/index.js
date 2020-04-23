@@ -20,12 +20,12 @@ export default function GameOver() {
     return `${diffHoras}:${diffMinutos}:${diffSegundos}`;
   }
 
-  function percentEvaluation(){
-    return (gameState.correct/gameState.questions.length)*100
+  function percentEvaluation() {
+    return (gameState.correct / gameState.questions.length) * 100
   }
 
-  function evaluation(){
-    if(percentEvaluation > 50.0){
+  function evaluation() {
+    if (percentEvaluation() > 50.0) {
       return `Parabéns ${gameState.user_name} você foi aprovado!!!`;
     }
     return `Poxa ${gameState.user_name}, infelizmente não atingiu a pontuação mínima =/`;
