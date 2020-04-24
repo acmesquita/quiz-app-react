@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../styles/device';
 
 export const Container = styled.div`
   display: flex;
@@ -19,6 +20,13 @@ export const Wrapper = styled.div`
   padding: 120px;
   width: 60%;
   border-radius: 3px;
+
+  @media ${device.mobileS} { 
+    background-color: #e3e3e3;
+    padding: 40px;
+    width: 95%;
+    border-radius: 3px;
+  }
 `;
 
 export const Option = styled.div`
