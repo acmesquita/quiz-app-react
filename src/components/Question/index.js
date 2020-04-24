@@ -20,7 +20,7 @@ export default function Question({ question, anwers, nextQuestion }) {
       if (item === answer) color = 'lightblue'
       return (
         <Option key={item} color={color} >
-          <p>{item}</p>
+          <p dangerouslySetInnerHTML={{ __html: item }}></p>
         </Option>
       )
     }
@@ -32,7 +32,7 @@ export default function Question({ question, anwers, nextQuestion }) {
   useEffect(() => {
     setQuestions(anwers.map(item =>
       <Option onClick={() => validateAnwer(item)} key={item} color='lightgrey'>
-        <p>{item}</p>
+        <p dangerouslySetInnerHTML={{ __html: item }}></p>
       </Option>
     ))
     setNext(false)
@@ -40,7 +40,7 @@ export default function Question({ question, anwers, nextQuestion }) {
 
   return (
     <Wrapper>
-      <h3>{question}</h3>
+      <h3 dangerouslySetInnerHTML={{ __html: question }}></h3>
       <Container>
         {questions}
       </Container>
